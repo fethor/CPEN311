@@ -1,0 +1,316 @@
+------------------------------------------------------------
+-- VHDL Testbench for fir8
+-- 2016 3 16 17 26 30
+-- Created by "EditVHDL"
+-- "Copyright (c) 2002 Altium Limited"
+------------------------------------------------------------
+
+Library IEEE;
+Use     IEEE.std_logic_1164.all;
+Use     IEEE.std_logic_textio.all;
+Use     STD.textio.all;
+------------------------------------------------------------
+
+------------------------------------------------------------
+entity Testfir8 is
+end Testfir8;
+------------------------------------------------------------
+
+------------------------------------------------------------
+architecture stimulus of Testfir8 is
+
+
+    component fir8
+        port (
+            CLOCK_50: in std_logic;
+            stream_in: in std_logic_vector(23 downto 0);
+            stream_out: out std_logic_vector(23 downto 0);
+            valid: in std_logic
+        );
+    end component;
+
+    signal CLOCK_50: std_logic;
+    signal stream_in: std_logic_vector(23 downto 0);
+    signal stream_out: std_logic_vector(23 downto 0);
+    signal valid: std_logic;
+
+begin
+    DUT:fir8 port map (
+        CLOCK_50 => CLOCK_50,
+        stream_in => stream_in,
+        stream_out => stream_out,
+        valid => valid
+    );
+
+    STIMULUS0:process
+    begin
+        clock_50 <= '1';
+        wait for 5 ns;
+        clock_50 <= '0';
+        wait for 5 ns;
+        valid <= '1';
+        for I in 0 to 5000 loop
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;clock_50 <= '1';
+                stream_in <= "000000000000000110000000";
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+                stream_in <= "111111111111111111100000";
+                clock_50 <= '1';
+                wait for 5 ns;
+                clock_50 <= '0';
+                wait for 5 ns;
+        end loop;
+
+
+        wait;
+    end process;
+
+
+end;
+------------------------------------------------------------
+
+------------------------------------------------------------

@@ -1,0 +1,11 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+ 
+LIBRARY WORK;
+USE WORK.ALL;
+
+entity hex2dec is
+	port (
+			);	
+	end hex2dec;

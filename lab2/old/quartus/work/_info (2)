@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\RHB\Dropbox\engineering\cpen311\lab1\quartus
+Ewin
+Z0 w1452889318
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\RHB\Dropbox\engineering\cpen311\lab2\quartus
+Z5 8C:/Users/RHB/Dropbox/engineering/cpen311/lab2/quartus/Win.vhd
+Z6 FC:/Users/RHB/Dropbox/engineering/cpen311/lab2/quartus/Win.vhd
+l0
+L8
+VL:FYe=8nbmE7@;[dnTQmB2
+Z7 OV;C;10.1d;51
+33
+Z8 !s108 1452889335.109000
+Z9 !s90 -reportprogress|300|-work|work|-2008|-explicit|C:/Users/RHB/Dropbox/engineering/cpen311/lab2/quartus/Win.vhd|
+Z10 !s107 C:/Users/RHB/Dropbox/engineering/cpen311/lab2/quartus/Win.vhd|
+Z11 o-work work -2008 -explicit -O0
+Z12 tExplicit 1
+!s100 ?HS3BTO?T^Q]DhT>BbZII3
+!i10b 1
+Abehavioural
+R1
+R2
+R3
+DEx4 work 3 win 0 22 L:FYe=8nbmE7@;[dnTQmB2
+l22
+L17
+V9Jd;L?oJEf7Y;3C68[5931
+R7
+33
+R8
+R9
+R10
+R11
+R12
+!s100 ]WfXN4GVb^[NfmAQQo<Q[1
+!i10b 1
+Ewin_tb
+Z13 w1452887340
+R1
+R2
+R3
+R4
+Z14 8C:/Users/RHB/Dropbox/engineering/cpen311/lab2/quartus/win_tb.vhd
+Z15 FC:/Users/RHB/Dropbox/engineering/cpen311/lab2/quartus/win_tb.vhd
+l0
+L19
+VlzZ83i=^lKkhCV1o?of[z2
+!s100 KQX6JHRmT^lW5EcReIaA60
+R7
+32
+!i10b 1
+Z16 !s108 1452889335.536000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/RHB/Dropbox/engineering/cpen311/lab2/quartus/win_tb.vhd|
+Z18 !s107 C:/Users/RHB/Dropbox/engineering/cpen311/lab2/quartus/win_tb.vhd|
+Z19 o-work work -2002 -explicit -O0
+R12
+Abehavioural
+R1
+R2
+R3
+Z20 DEx4 work 6 win_tb 0 22 lzZ83i=^lKkhCV1o?of[z2
+l124
+L25
+Z21 VVC2aoZ_Id:EkD_?3NR`9d3
+Z22 !s100 ?Ibb?=T2mmSV?;RbU999D2
+R7
+32
+!i10b 1
+R16
+R17
+R18
+R19
+R12

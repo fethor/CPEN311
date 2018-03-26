@@ -1,0 +1,98 @@
+------------------------------------------------------------
+-- VHDL Testbench for lab6_top
+-- 2016 4 8 10 30 51
+-- Created by "EditVHDL"
+-- "Copyright (c) 2002 Altium Limited"
+------------------------------------------------------------
+
+Library IEEE;
+Use     IEEE.std_logic_1164.all;
+Use     IEEE.std_logic_textio.all;
+Use     STD.textio.all;
+------------------------------------------------------------
+
+------------------------------------------------------------
+entity Testlab6_top is
+end Testlab6_top;
+------------------------------------------------------------
+
+------------------------------------------------------------
+architecture stimulus of Testlab6_top is
+    file RESULTS: TEXT open WRITE_MODE is "results.txt";
+    procedure WRITE_RESULTS(
+        CLOCK_50: std_logic;
+        KEY: std_logic_vector(3 downto 0);
+        LEDG: std_logic_vector(7 downto 0);
+        LEDR: std_logic_vector(17 downto 0);
+        SW: std_logic_vector(15 downto 0)
+    ) is
+        variable l_out : line;
+    begin
+        write(l_out, now, right, 15);
+        write(l_out, CLOCK_50, right, 2);
+        write(l_out, KEY, right, 5);
+        write(l_out, LEDG, right, 9);
+        write(l_out, LEDR, right, 19);
+        write(l_out, SW, right, 19);
+        writeline(RESULTS, l_out);
+    end procedure;
+
+    component lab6_top
+        port (
+            CLOCK_50: in std_logic;
+            KEY: in std_logic_vector(3 downto 0);
+            LEDG: out std_logic_vector(7 downto 0);
+            LEDR: out std_logic_vector(17 downto 0);
+            SW: in std_logic_vector(17 downto 0)
+        );
+    end component;
+
+    signal CLOCK_50: std_logic;
+    signal KEY: std_logic_vector(3 downto 0);
+    signal LEDG: std_logic_vector(7 downto 0);
+    signal LEDR: std_logic_vector(17 downto 0);
+    signal SW: std_logic_vector(17 downto 0);
+
+begin
+    DUT:lab6_top port map (
+        CLOCK_50 => CLOCK_50,
+        KEY => KEY,
+        LEDG => LEDG,
+        LEDR => LEDR,
+        SW => SW
+    );
+
+    STIMULUS0:process
+    begin
+        Clock_50 <= '0';
+        Key(3) <= '1';
+        SW <= "110101111100111100";
+        wait for 5 ns;
+        Clock_50 <= '1';
+        Key(3) <= '0';
+        wait for 5 ns;
+        
+        for a in 0 to 1000 loop
+          Clock_50 <= '1';
+          wait for 5 ns;
+          Clock_50 <= '0';
+          wait for 5 ns;
+        end loop;
+        
+        wait;
+        
+        
+    end process;
+
+    WRITE_RESULTS(
+        CLOCK_50,
+        KEY,
+        LEDG,
+        LEDR,
+        SW
+    );
+
+end architecture;
+------------------------------------------------------------
+
+------------------------------------------------------------

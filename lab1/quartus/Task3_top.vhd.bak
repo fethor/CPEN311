@@ -1,0 +1,30 @@
+-- synthesis VHDL_INPUT_VERSION VHDL_2008
+
+library ieee;
+use ieee.std_logic_1164.all;
+use work.cpu_declarations.all;
+use work.sseg_constants.all;
+
+entity lab1_top is
+  port( 
+        SW: in std_logic_vector(17 downto 0);
+        HEX0: out sseg_type );
+end entity;
+
+architecture impl of lab1_top is
+  signal data: std_logic_vector(15 downto 0);
+begin
+  DP: Task3 port map( 		 clk        	=>  KEY(0), -- KEY is 1 when NOT pushed
+									resetb			=>  KEY(1),
+									hex0 				=> HEX0
+                       );
+
+  H0: sseg port map( data(3 downto 0), HEX0 );
+  HEX1 <= (others => '1'); -- disable
+  HEX2 <= (others => '1'); -- disable
+  HEX3 <= (others => '1'); -- disable
+  HEX4 <= (others => '1'); -- disable
+  HEX5 <= (others => '1'); -- disable 
+  HEX6 <= (others => '1'); -- disable
+  HEX7 <= (others => '1'); -- disable
+end impl;

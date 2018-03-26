@@ -1,0 +1,20 @@
+
+State Machine - |lab3_top|controller
+Name controller.waiting controller.cir8 controller.cir7 controller.cir6 controller.cir5 controller.cir4 controller.cir3 controller.cir2 controller.cir1 
+controller.cir1 0 0 0 0 0 0 0 0 0 
+controller.cir2 0 0 0 0 0 0 0 1 1 
+controller.cir3 0 0 0 0 0 0 1 0 1 
+controller.cir4 0 0 0 0 0 1 0 0 1 
+controller.cir5 0 0 0 0 1 0 0 0 1 
+controller.cir6 0 0 0 1 0 0 0 0 1 
+controller.cir7 0 0 1 0 0 0 0 0 1 
+controller.cir8 0 1 0 0 0 0 0 0 1 
+controller.waiting 1 0 0 0 0 0 0 0 1 
+
+State Machine - |lab3_top|fullcircler:circle|circle_machine
+Name circle_machine.finished circle_machine.top circle_machine.bottom circle_machine.midbot circle_machine.midtop 
+circle_machine.midtop 0 0 0 0 0 
+circle_machine.midbot 0 0 0 1 1 
+circle_machine.bottom 0 0 1 0 1 
+circle_machine.top 0 1 0 0 1 
+circle_machine.finished 1 0 0 0 1 

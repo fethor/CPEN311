@@ -1,0 +1,94 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\13.0sp1
+Pfsmc_declerations
+Z0 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z1 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z2 w1452131564
+Z3 dC:\Users\RHB\Dropbox\engineering\cpen311\lab1\quartus
+Z4 8C:/Users/RHB/Dropbox/engineering/cpen311/lab1/quartus/state_machine.vhd
+Z5 FC:/Users/RHB/Dropbox/engineering/cpen311/lab1/quartus/state_machine.vhd
+l0
+L142
+VUGhRb][X?E7oY>logP[B_3
+!s100 6cl<6I`G637Pe_OkL:I`70
+Z6 OV;C;10.1d;51
+32
+!i10b 1
+Z7 !s108 1452212637.333000
+Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/RHB/Dropbox/engineering/cpen311/lab1/quartus/state_machine.vhd|
+Z9 !s107 C:/Users/RHB/Dropbox/engineering/cpen311/lab1/quartus/state_machine.vhd|
+Z10 o-work work -2002 -explicit -O0
+Z11 tExplicit 1
+Elab1_sm_tb
+Z12 w1452212634
+Z13 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+R1
+R3
+Z14 8C:/Users/RHB/Dropbox/engineering/cpen311/lab1/quartus/Lab1_SM_tb.vhd
+Z15 FC:/Users/RHB/Dropbox/engineering/cpen311/lab1/quartus/Lab1_SM_tb.vhd
+l0
+L4
+VZMKd6LCB3;Nm`BVWV_2C;1
+R6
+32
+Z16 !s108 1452212636.868000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/RHB/Dropbox/engineering/cpen311/lab1/quartus/Lab1_SM_tb.vhd|
+Z18 !s107 C:/Users/RHB/Dropbox/engineering/cpen311/lab1/quartus/Lab1_SM_tb.vhd|
+R10
+R11
+!s100 OjPOcKEDC4YmK@9HoFoH:3
+!i10b 1
+Artl
+R13
+R1
+DEx4 work 10 lab1_sm_tb 0 22 ZMKd6LCB3;Nm`BVWV_2C;1
+l19
+L7
+V75YXUa]Z<hTBPiC5C77AK0
+R6
+32
+R16
+R17
+R18
+R10
+R11
+!s100 eHZ07aE7YiQWMX^kaIeaH0
+!i10b 1
+Etask3
+R2
+R13
+R1
+R3
+R4
+R5
+l0
+L26
+VA_OU3k6b`o4B>GEDkG>>E1
+!s100 n`;Mo<?3@BAUe>fF>iMY[1
+R6
+32
+!i10b 1
+R7
+R8
+R9
+R10
+R11
+Abehavioural
+R13
+R1
+Z19 DEx4 work 5 task3 0 22 A_OU3k6b`o4B>GEDkG>>E1
+l53
+L47
+Z20 V<e2VD<oR]ek;BmL546KWh3
+Z21 !s100 59nn0BnZFb0BVl8g4B_791
+R6
+32
+!i10b 1
+R7
+R8
+R9
+R10
+R11

@@ -1,0 +1,7 @@
+//intialize test bench for the FSM
+//I actually made a Top file to handle module interconnections but i only have one module right now
+//Also a test bench per module is prefereable
+
+include "StateMachine.sv"
+
+module StateMachine_TB;

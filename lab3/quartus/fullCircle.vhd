@@ -1,0 +1,209 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity fullcircler is
+	generic (x : integer := 80;
+				y : integer := 60);
+   port(clk : in std_logic;
+		 enable: in std_logic;
+		 reset : in std_logic;
+		 radius: in unsigned (5 downto 0);
+		 position_x: out unsigned (8 downto 0);
+		 position_y: out unsigned (7 downto 0);
+		 plot: out std_logic;
+		 done: out std_logic
+	);
+end fullcircler;
+
+architecture statesof of fullcircler is
+ 
+ type octants is (midtop, midbot, bottom, top, finished);
+ signal circle_machine : octants;
+ signal state_hold: octants;
+ signal decision : signed (15 downto 0):= to_signed(0,16);
+ signal offset_x_hold, offset_y_hold, filler_x_hold : unsigned (7 downto 0);
+ signal checked, first_run : std_logic;
+ 
+
+ begin
+ 
+ 
+ process (clk) 
+ variable offset_x, offset_y, filler_x : unsigned (7 downto 0);
+ variable random_signal, random_signal2 : unsigned (15 downto 0);
+ begin
+	
+	if (falling_edge(clk)) then
+		if enable then
+	
+		case (circle_machine) is
+			when (midtop) =>
+				plot <= '1';
+				done <= '0';
+			  if (checked) then
+				  
+				  if (first_run) then
+				    offset_x := "00"&radius;
+				    offset_y := to_unsigned(0,offset_y'length);
+				    decision <= 1-to_signed(to_integer(offset_x),decision'length);
+				    first_run <= '0';
+				  end if;
+				  filler_x := to_unsigned(0,filler_x'length);
+				else 
+				  offset_x := offset_x_hold;
+				  offset_y := offset_y_hold;
+				  filler_x := filler_x_hold;
+				end if;
+				
+				offset_x_hold <= offset_x;
+				offset_y_hold <= offset_y;
+				
+				
+				random_signal := "00000000"&filler_x;
+				random_signal2:= 2*offset_x;
+				if (random_signal < random_signal2) then
+					position_x <= "00"&(to_unsigned(x,7))-offset_x+filler_x;
+					position_y <= to_unsigned(y,7)+offset_y;
+					filler_x_hold <= filler_x +1;
+					checked <= '0';
+				else	
+					circle_machine <= top;
+					checked <= '1';
+					filler_x := to_unsigned(0,filler_x'length);
+					filler_x_hold <= filler_x;
+				end if;
+					
+			
+		--top fill in	
+			when (top) =>
+				plot <='1';
+				if (checked) then
+					offset_x := offset_x_hold;
+					offset_y := offset_y_hold;
+					filler_x := to_unsigned(0,filler_x'length);
+				
+				else
+					offset_x := offset_x_hold;
+					offset_y := offset_y_hold;
+					filler_x := filler_x_hold;
+				end if;
+				offset_x_hold <= offset_x;
+				offset_y_hold <= offset_y;
+				
+				
+				random_signal := "00000000"&filler_x;
+				random_signal2:= 2*offset_y;
+				if (random_signal < random_signal2) then
+	
+					position_x <= "00"&(to_unsigned(x,7))-offset_y+filler_x;
+					position_y <= to_unsigned(y,7)+offset_x;
+					filler_x_hold <= filler_x +1;
+					checked <= '0';
+				else	
+					circle_machine <= midbot;
+					checked <= '1';
+					filler_x := to_unsigned(0,filler_x'length);
+					filler_x_hold <= filler_x;
+				end if;
+		-- middle bottom fill in		
+			when (midbot) =>
+				plot <='1';
+				if (checked) then
+					offset_x := offset_x_hold;
+					offset_y := offset_y_hold;
+					filler_x := to_unsigned(0,filler_x'length);
+				
+				else
+					offset_x := offset_x_hold;
+					offset_y := offset_y_hold;
+					filler_x := filler_x_hold;
+				end if;
+				
+				offset_x_hold <= offset_x;
+				offset_y_hold <= offset_y;
+				
+				
+				random_signal := "00000000"&filler_x;
+				random_signal2:= 2*offset_x;
+				if (random_signal < random_signal2) then
+					position_x <= "00"&(to_unsigned(x,7))-offset_x+filler_x;
+					position_y <= to_unsigned(y,7)-offset_y;
+					filler_x_hold <= filler_x +1;
+					checked <= '0';
+				else	
+					circle_machine <= bottom;
+					checked <= '1';
+					filler_x := to_unsigned(0,filler_x'length);
+					filler_x_hold <= filler_x;
+				end if;
+	--bottom fill in			
+			when (bottom) =>
+				plot <='1';
+				if (checked) then
+					offset_x := offset_x_hold;
+					offset_y := offset_y_hold;
+					filler_x := to_unsigned(0,filler_x'length);
+				
+				else
+					offset_x := offset_x_hold;
+					offset_y := offset_y_hold;
+					filler_x := filler_x_hold;
+				end if;
+				offset_x_hold <= offset_x;
+				offset_y_hold <= offset_y;
+				
+				
+				random_signal := "00000000"&filler_x;
+				random_signal2:= 2*offset_y;
+				if (random_signal < random_signal2) then
+					position_x <= "00"&(to_unsigned(x,7))-offset_y+filler_x;
+					position_y <= to_unsigned(y,7)-offset_x;
+					filler_x_hold <= filler_x +1;
+					checked <= '0';
+				else
+						
+					if (offset_y > offset_x) then
+						circle_machine <= finished;
+						plot <= '0';
+					else
+					  
+						offset_y := offset_y +1;
+						if (decision < 1) then
+							decision <= decision + 2* to_signed(to_integer(offset_y),8) +1;
+							circle_machine <= midtop;
+						else 
+							offset_x := offset_x - 1;
+							decision <= decision + 2*to_signed(to_integer(offset_y),offset_y'length)-2*to_signed(to_integer(offset_x),offset_x'length)+1;
+							
+							circle_machine <= midtop;
+						end if;
+					end if;
+					offset_y_hold <= offset_y;
+					offset_x_hold <= offset_x;
+					checked <= '1';
+					filler_x := to_unsigned(0,filler_x'length);
+					filler_x_hold <= filler_x;
+				end if;
+	
+	
+	--when the machine is in the done state it can not restart until enable is low and will not print		
+			when others =>
+				plot <= '0';
+				done <= '1';
+				
+			end case;
+			end if;
+		end if;
+--resets the machine at the end of every cycle	
+		if (not enable) then
+			done <= '0';
+			circle_machine <= midtop;
+			checked <= '1';
+			first_run <= '1';
+		end if;
+	
+	end process;
+
+END;
+				

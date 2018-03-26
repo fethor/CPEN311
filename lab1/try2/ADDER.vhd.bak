@@ -1,0 +1,163 @@
+------------------------------------------------------
+--
+--  This is the skeleton file for Lab 1 Phase 3.  You should
+--  start with this file when you describe your state machine.  
+--  
+--------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+--------------------------------------------------------
+--
+--  This is the entity part of the top level file for Phase 3.
+--  The entity part declares the inputs and outputs of the
+--  module as well as their types.  For now, a signal of
+--  “std_logic” type can take on the value ‘0’ or ‘1’ (it
+--  can actually do more than this).  A signal of type
+--  std_logic_vector can be thought of as an array of 
+--  std_logic, and is used to describe a bus (a parallel 
+--  collection of wires).
+--
+--  Note: you don't have to change the entity part.
+--  
+----------------------------------------------------------
+
+entity Task3 is
+
+   port (clk : in std_logic;  -- clock input to state machine
+         resetb : in std_logic;  -- active-low reset input
+         skip : in std_logic;     -- skip input
+         hex : out std_logic_vector(6 downto 0)  -- output of state machine
+            -- Note that in the above, hex0 is a 7-bit wide bus
+            -- indexed using indices 6, 5, 4 ... down to 0.  The
+            -- most-significant bit is hex(6) and the least significant
+            -- bit is hex(0)
+   );
+end Task3;
+
+----------------------------------------------------------------
+--
+-- The following is the architecture part of the state machine.  It 
+-- describes the behaviour of the state machine using synthesizable
+-- VHDL.  
+--
+----------------------------------------------------------------- 
+
+architecture behavioural of Task3 is
+
+type state_type is (H, A, R1, R2, I, S1, S2);
+   signal next_state, current_state  : state_type;
+
+
+begin
+	
+	process(clk) begin
+		if rising_edge(clk) then 
+			current_state <= next_state;
+		end if;
+	end process;
+
+	process (clk, skip, resetb, current_state) begin	
+		case current_state is
+			when H =>
+				if (skip = '0') then 
+					next_state <= A;
+				else 
+					next_state <= R1;
+				end if;
+	---////			
+			when A =>
+				if (skip = '0') then 
+					next_state <= R1;
+				else 
+					next_state <= R2;
+				end if;
+	---///			
+			when R1 =>
+				if (skip = '0') then 
+					next_state <= R2;
+				else 
+					next_state <= I;
+				end if;
+	---///			
+			when R2 =>
+				if (skip = '0') then 
+					next_state <= I;
+				else 
+					next_state <= S1;
+				end if;
+	---///			
+			when I =>
+				if (skip = '0') then 
+					next_state <= S1;
+				else 
+					next_state <= S2;
+				end if;
+				
+	---///			
+			when S1 =>
+				if (skip = '0') then 
+					next_state <= S2;
+				else 
+					next_state <= H;
+				end if;
+	---///			
+			when S2 =>
+				if (skip = '0') then 
+					next_state <= H;
+				else 
+					next_state <= A;
+				end if;
+				
+			when others => next_state <= H;
+		end case;
+		
+		if (resetb = '0') then 
+			next_state <= H;
+		end if;
+	end process;
+
+-- outputs	
+		process (clk, skip, resetb) begin	
+			case current_state is
+			when H =>
+				hex <= "0001001";
+			when A =>
+				hex <= "0001000";
+			when R1 =>
+				hex <= "0101111";
+			when R2 =>
+				hex <= "0101111";
+			when I =>
+				hex <= "1111001";
+			when S1 =>
+				hex <= "0010010";
+			when S2 =>
+				hex <= "0010010";
+			when others => hex <= "1111111";
+		end case;
+		end process;
+				
+		
+	
+end behavioural;
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+package FSMC_declerations is
+  component Task3 is
+  port(clk: in std_logic;
+         resetb : in std_logic;  -- active-low reset input
+         skip : in std_logic;     -- skip input
+         hex : out std_logic_vector(6 downto 0)  -- output of state machine
+            -- Note that in the above, hex0 is a 7-bit wide bus
+            -- indexed using indices 6, 5, 4 ... down to 0.  The
+            -- most-significant bit is hex(6) and the least significant
+            -- bit is hex(0)
+   );
+
+  end component;
+  end package;

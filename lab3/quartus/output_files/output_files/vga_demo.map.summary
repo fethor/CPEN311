@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Feb 05 19:01:53 2016
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : vga_demo
+Top-level Entity Name : vga_demo
+Family : Cyclone II
+Total logic elements : 119
+    Total combinational functions : 113
+    Dedicated logic registers : 32
+Total registers : 32
+Total pins : 58
+Total virtual pins : 0
+Total memory bits : 57,600
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

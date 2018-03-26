@@ -1,0 +1,20 @@
+
+State Machine - |task3_top|Task3:SM2|current_state
+Name current_state.S2 current_state.S1 current_state.I current_state.R2 current_state.R1 current_state.A current_state.H 
+current_state.H 0 0 0 0 0 0 0 
+current_state.A 0 0 0 0 0 1 1 
+current_state.R1 0 0 0 0 1 0 1 
+current_state.R2 0 0 0 1 0 0 1 
+current_state.I 0 0 1 0 0 0 1 
+current_state.S1 0 1 0 0 0 0 1 
+current_state.S2 1 0 0 0 0 0 1 
+
+State Machine - |task3_top|Task3:StateMAchine1|current_state
+Name current_state.S2 current_state.S1 current_state.I current_state.R2 current_state.R1 current_state.A current_state.H 
+current_state.H 0 0 0 0 0 0 0 
+current_state.A 0 0 0 0 0 1 1 
+current_state.R1 0 0 0 0 1 0 1 
+current_state.R2 0 0 0 1 0 0 1 
+current_state.I 0 0 1 0 0 0 1 
+current_state.S1 0 1 0 0 0 0 1 
+current_state.S2 1 0 0 0 0 0 1 

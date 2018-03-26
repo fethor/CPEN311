@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="lab6_top">
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab6_top|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_85m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab6_top|s_memory:u0|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_lrh1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

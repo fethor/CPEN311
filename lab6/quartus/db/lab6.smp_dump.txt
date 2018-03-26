@@ -1,0 +1,10 @@
+
+State Machine - |lab6_top|state
+Name state.swap_array_read_4 state.swap_array_read_3 state.swap_array_read_2 state.swap_array_read_1 state.state_done state.state_fill state.state_init 
+state.state_init 0 0 0 0 0 0 0 
+state.state_fill 0 0 0 0 0 1 1 
+state.state_done 0 0 0 0 1 0 1 
+state.swap_array_read_1 0 0 0 1 0 0 1 
+state.swap_array_read_2 0 0 1 0 0 0 1 
+state.swap_array_read_3 0 1 0 0 0 0 1 
+state.swap_array_read_4 1 0 0 0 0 0 1 

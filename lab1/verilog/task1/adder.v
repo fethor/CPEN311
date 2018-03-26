@@ -1,0 +1,12 @@
+module adder
+  
+  ( input [7:0] SW,
+    output reg [3:0] LEDR
+    );
+    
+    always @ ( SW)
+    begin 
+      LEDR <= SW[3:0]+SW[7:4];
+    end
+    
+endmodule

@@ -1,0 +1,22 @@
+
+State Machine - |lab4|\controller_state:state
+Name \controller_state:state.DRAW_PUCK \controller_state:state.ERASE_PUCK \controller_state:state.DRAW_PADDLE_LOOP_2 \controller_state:state.DRAW_PADDLE_ENTER_2 \controller_state:state.ERASE_PADDLE_LOOP_2 \controller_state:state.ERASE_PADDLE_ENTER_2 \controller_state:state.DRAW_PADDLE_LOOP \controller_state:state.DRAW_PADDLE_ENTER \controller_state:state.ERASE_PADDLE_LOOP \controller_state:state.ERASE_PADDLE_ENTER \controller_state:state.IDLE \controller_state:state.DRAW_LEFT_LOOP \controller_state:state.DRAW_LEFT_ENTER \controller_state:state.DRAW_RIGHT_LOOP \controller_state:state.DRAW_RIGHT_ENTER \controller_state:state.DRAW_TOP_LOOP \controller_state:state.DRAW_TOP_ENTER \controller_state:state.START \controller_state:state.INIT 
+\controller_state:state.INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+\controller_state:state.START 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+\controller_state:state.DRAW_TOP_ENTER 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+\controller_state:state.DRAW_TOP_LOOP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+\controller_state:state.DRAW_RIGHT_ENTER 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+\controller_state:state.DRAW_RIGHT_LOOP 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+\controller_state:state.DRAW_LEFT_ENTER 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+\controller_state:state.DRAW_LEFT_LOOP 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+\controller_state:state.IDLE 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+\controller_state:state.ERASE_PADDLE_ENTER 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+\controller_state:state.ERASE_PADDLE_LOOP 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+\controller_state:state.DRAW_PADDLE_ENTER 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+\controller_state:state.DRAW_PADDLE_LOOP 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+\controller_state:state.ERASE_PADDLE_ENTER_2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\controller_state:state.ERASE_PADDLE_LOOP_2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\controller_state:state.DRAW_PADDLE_ENTER_2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\controller_state:state.DRAW_PADDLE_LOOP_2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\controller_state:state.ERASE_PUCK 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\controller_state:state.DRAW_PUCK 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

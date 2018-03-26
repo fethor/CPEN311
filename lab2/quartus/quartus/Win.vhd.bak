@@ -1,0 +1,41 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+ 
+LIBRARY WORK;
+USE WORK.ALL;
+
+ENTITY win IS
+	PORT(spin_result_latched : in unsigned(5 downto 0);  -- result of the spin (the winning number)
+             bet_target : in unsigned(5 downto 0); -- target number for bet
+             bet_modifier : in unsigned(3 downto 0); -- as described in the handout
+             win_straightup : out std_logic;  -- whether it is a straight-up winner
+             win_split : out std_logic;  -- whether it is a split bet winner
+             win_corner : out std_logic); -- whether it is a corner bet winner
+END win;
+
+ARCHITECTURE behavioural OF win IS
+
+signal TL, T, TR, L, R, BL, B, BR : std_logic_vector(5 downto 0);
+
+BEGIN
+
+	process (all) begin
+		/*if (bet_modifier = "1111") then
+			TL <= bet_target -4;
+		elsif (bet_modifier = "1000" or bet_modifier = "1001" or bet_modifier = "1111" ) then
+			T<= bet_target - 3;
+		elsif (bet_modifier = "1001") then
+			TR<= bet_target -2;
+		elsif (bet_modifier = "*/
+		
+		case(bet_modifier) is
+			when "1111" =>
+				TL <= bet_target -4;
+				T<= bet_target -3;
+				L<= bet_target -1;
+				
+			
+	
+
+END;

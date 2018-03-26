@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Lab5_top">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab5_top|audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO|scfifo:Sync_FIFO" CBX_FILE_NAME="scfifo_6041.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab5_top|audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO" CBX_FILE_NAME="scfifo_6041.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab5_top|audio_codec:codec|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO" CBX_FILE_NAME="scfifo_6041.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab5_top|audio_codec:codec|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO" CBX_FILE_NAME="scfifo_6041.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab5_top|noise:rightnoiser|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_00h.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

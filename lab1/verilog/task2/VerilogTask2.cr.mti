@@ -1,0 +1,6 @@
+C:/Users/RHB/Dropbox/engineering/cpen311/lab1/verilog/task2/detector.v {0 {vlog -work work C:/Users/RHB/Dropbox/engineering/cpen311/lab1/verilog/task2/detector.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module detector
+** Error: C:/Users/RHB/Dropbox/engineering/cpen311/lab1/verilog/task2/detector.v(38): near "EOF": syntax error, unexpected end of source code
+
+} {4.0 5.0} {}}

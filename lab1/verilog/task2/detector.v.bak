@@ -1,0 +1,7 @@
+module detector(
+  input [0:0] insig,
+  input [0:0] reset,
+  input [0:0] clk,
+  output reg [0:0] alert);
+  
+   
